@@ -1,0 +1,7 @@
+{
+  "name": "NotesPlus",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
