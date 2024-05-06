@@ -1,0 +1,84 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-img src="../../assets/img/notePlus.png"> </ion-img>
+    </ion-row>
+    <ion-row class="ion-justify-content-center" [formGroup]="userForm">
+      <ion-input
+        id="name"
+        formControlName="name"
+        mode="ios"
+        ngModel
+        type="text"
+        labelPlacement="stacked"
+        helperText="Introduzca su nombre"
+        label="Nombre"
+        placeholder="Jose Perez"
+      >
+        <ion-icon
+          name="person-circle"
+          slot="start"
+          aria-hidden="true"
+        ></ion-icon>
+      </ion-input>
+    </ion-row>
+    <ion-row class="ion-justify-content-center" [formGroup]="userForm">
+      <ion-input
+        id="email"
+        formControlName="email"
+        mode="ios"
+        ngModel
+        email
+        type="email"
+        labelPlacement="stacked"
+        helperText="Introduzca su correo electrónico"
+        label="Correo electrónico"
+        errorText="Correo electrónico invalido"
+        placeholder="email@domain.com"
+      >
+        <ion-icon name="mail" slot="start" aria-hidden="true"></ion-icon>
+      </ion-input>
+    </ion-row>
+    <ion-row class="ion-justify-content-center" [formGroup]="userForm">
+      <ion-input
+        id="password"
+        formControlName="password"
+        mode="ios"
+        [type]="typePassword"
+        labelPlacement="stacked"
+        helperText="Introduzca su contraseña"
+        label="Contraseña"
+        placeholder="********"
+      >
+        <ion-icon name="lock-closed" slot="start" aria-hidden="true"></ion-icon>
+        <ion-button
+          fill="clear"
+          slot="end"
+          aria-label="Show/hide"
+          (click)="showPassword()"
+        >
+          <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+        </ion-button>
+      </ion-input>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-padding">
+      <ion-button mode="ios" fill="outline" (click)="register()">
+        Registrar
+        <ion-icon slot="end" name="send"></ion-icon>
+      </ion-button>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <p>
+        <ion-text mode="ios">¿Ya tienes cuenta? </ion-text>
+        <ion-text
+          mode="ios"
+          color="primary"
+          (click)="null"
+          [routerLink]="['/log-in']"
+        >
+          Inicia sesión</ion-text
+        >
+      </p>
+    </ion-row>
+  </ion-grid>
+</ion-content>
